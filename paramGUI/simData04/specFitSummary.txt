@@ -1,0 +1,29 @@
+
+Formula: 0 ~ rescomp(theta = t, d = d, currModel = currModel)
+
+Parameters:
+     Estimate Std. Error t value Pr(>|t|)    
+t1  1.428e+04  2.889e-02  494465   <2e-16 ***
+t2  8.000e+02  5.032e-02   15897   <2e-16 ***
+t3  4.001e-01  1.313e-04    3046   <2e-16 ***
+t4  1.370e+04  4.816e-02  284473   <2e-16 ***
+t5  6.500e+02  8.088e-02    8036   <2e-16 ***
+t6 -2.998e-01  2.339e-04   -1282   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.001001 on 7166 degrees of freedom
+Number of nonlinear parameters: 6 
+Number of conditionally linear parameters: 652 
+
+Correlation of Parameter Estimates:
+   t1    t2    t3    t4    t5   
+t2  0.28                        
+t3 -0.77 -0.26                  
+t4 -0.04 -0.15  0.11            
+t5  0.17  0.10 -0.13 -0.28      
+t6  0.11  0.11 -0.11 -0.75  0.36
+
+Number of iterations to convergence: 6 
+Achieved convergence tolerance: 4.93e-08 
+

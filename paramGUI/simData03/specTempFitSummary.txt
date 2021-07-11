@@ -1,0 +1,26 @@
+
+Formula: psisim ~ kronecker(calcE(sp, x2), compModel(k = k, x = x, seqmod = seqmod, 
+    irf = irf, irfpar = irfpar))
+
+Parameters:
+        Estimate Std. Error    t value Pr(>|t|)    
+k1     2.499e-02  6.974e-06   3583.687   <2e-16 ***
+k2     9.998e-04  2.539e-07   3937.717   <2e-16 ***
+sp1    1.429e+04  4.882e-02 292586.244   <2e-16 ***
+sp2    8.000e+02  7.690e-02  10403.208   <2e-16 ***
+sp3    4.000e-01  1.774e-04   2254.397   <2e-16 ***
+sp4    1.370e+04  3.873e-02 353691.138   <2e-16 ***
+sp5    6.500e+02  5.266e-02  12342.633   <2e-16 ***
+sp6   -3.001e-01  1.317e-04  -2278.834   <2e-16 ***
+.lin1  1.000e+00  9.780e-05  10225.851   <2e-16 ***
+.lin2 -6.595e-05  9.918e-05     -0.665    0.506    
+.lin3  1.275e-04  1.494e-04      0.854    0.393    
+.lin4  9.999e-01  1.242e-04   8048.132   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.001004 on 7812 degrees of freedom
+
+Number of iterations to convergence: 7 
+Achieved convergence tolerance: 4.486e-06
+
