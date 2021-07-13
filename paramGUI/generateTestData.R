@@ -2,12 +2,18 @@
 ## install.packages("TIMP")
 ## If the R package paramGUI is not installed, please run:
 ## install.packages("paramGUI")
+rm(list = ls())
 initial_wd <- getwd()
 print(paste('initial workdir (initial_wd): ', initial_wd))
 
+detach("package:paramGUI", unload = TRUE)
+detach("package:TIMP", unload = TRUE)
 # load packages
 require(TIMP)
-require(paramGUI) 
+require(paramGUI)
+
+
+
 # set random seed (and noise level)
 set.seed(123)
 global_sigma <- .001
@@ -18,10 +24,14 @@ global_sigma <- .001
 simulateAndExportDatasetParamGUI <- function(filename, ...) {
   # dataset <- TIMP::simndecay_gen(...)
   dataset <- paramGUI::simndecay_gen_paramGUI(...)
-  cat("filename\n",file=filename)
-  cat("dataset name\n",file=filename,append=TRUE)
-  cat("Wavelength explicit\n",file=filename,append=TRUE)
-  cat("Intervalnr ",  length(dataset@x2),"\n",file=filename,append=TRUE)
+  cat("filename\n", file = filename)
+  cat("dataset name\n", file = filename, append = TRUE)
+  cat("Wavelength explicit\n", file = filename, append = TRUE)
+  cat("Intervalnr ",
+      length(dataset@x2),
+      "\n",
+      file = filename,
+      append = TRUE)
   suppressWarnings(
     write.table(
       x = dataset@psi.df,
@@ -29,7 +39,8 @@ simulateAndExportDatasetParamGUI <- function(filename, ...) {
       row.names = dataset@x,
       sep = " ",
       quote = FALSE,
-      file=filename,append=TRUE
+      file = filename,
+      append = TRUE
     )
   )
   dataset
@@ -54,35 +65,38 @@ source("simndecay_gen_custom_axes.R")
 simulateAndExportDatasetCustomAxes <- function(filename, ...) {
   # dataset <- TIMP::simndecay_gen(...)
   dataset <- simndecay_gen_custom_axes(...)
-  cat("filename\n",file=filename)
-  cat("dataset name\n",file=filename,append=TRUE)
-  cat("Wavelength explicit\n",file=filename,append=TRUE)
-  cat("Intervalnr ",  length(dataset@x2),"\n",file=filename,append=TRUE)
+  cat("filename\n", file = filename)
+  cat("dataset name\n", file = filename, append = TRUE)
+  cat("Wavelength explicit\n", file = filename, append = TRUE)
+  cat("Intervalnr ",
+      length(dataset@x2),
+      "\n",
+      file = filename,
+      append = TRUE)
   write.table(
     x = dataset@psi.df,
     col.names = dataset@x2,
     row.names = dataset@x,
     sep = " ",
     quote = FALSE,
-    file=filename,append=TRUE
+    file = filename,
+    append = TRUE
   )
   dataset
 }
 
-# To make full use of the new function we 
+# To make full use of the new function we
 # 1. create a shared time vector
-shared_times <- c(head(seq(2, 10, by=0.5),-1),
-                  head(seq(10, 50, by=1.5),-1),
-                  head(seq(50, 1000, by=15),-1),
-                  head(seq(1000, 3100, by=100),-1))
+shared_times <- c(head(seq(2, 10, by = 0.5), -1),
+                  head(seq(10, 50, by = 1.5), -1),
+                  head(seq(50, 1000, by = 15), -1),
+                  head(seq(1000, 3100, by = 100), -1))
 
-times_no_IRF <- c(
-  head(seq(0, 2, by=0.01),-1),
-  shared_times
-)
+times_no_IRF <- c(head(seq(0, 2, by = 0.01), -1),
+                  shared_times)
 
-times_with_IRF <- c(head(seq(-10, -2, by=0.6),-1),
-                    head(seq(-2, 2, by=0.1),-1),
+times_with_IRF <- c(head(seq(-10,-2, by = 0.6), -1),
+                    head(seq(-2, 2, by = 0.1), -1),
                     shared_times)
 
 print(sprintf("length(times) = %i ", length(times_no_IRF)))
@@ -90,8 +104,10 @@ print(sprintf("length(times) = %i ", length(times)))
 
 # 2. create a shared spectra (wavenumber / wavelength) axis
 
-wavenum <- seq(12820, 15120, by=46) # 661.3757 nm to 780.0312 nm per 6nm
-spectral <- seq(10**7/15120, 10**7/12820, by=5) # 661.3757 nm to 780.0312 nm
+wavenum <-
+  seq(12820, 15120, by = 46) # 661.3757 nm to 780.0312 nm per 6nm
+spectral <-
+  seq(10 ** 7 / 15120, 10 ** 7 / 12820, by = 5) # 661.3757 nm to 780.0312 nm
 # Formula: 10**7/wavenumber = wavelength
 print(sprintf("length(wavenum) = %i ", length(wavenum)))
 
@@ -105,3 +121,6 @@ source('simData03/simData03.R')
 # 2 components, parallel decay, with IRF, custom time and (more narrow) spectral axis
 source('simData04/simData04.R')
 
+# simData05:
+# 2 components, parallel decay, with IRF, custom time and energy-based spectral axis
+source('simData05/simData05.R')
