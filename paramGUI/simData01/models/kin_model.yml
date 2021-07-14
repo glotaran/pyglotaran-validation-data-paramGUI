@@ -1,0 +1,22 @@
+type: kinetic-spectrum
+dataset:
+  dataset:
+    megacomplex: [kin_mc]
+    initial_concentration: inputs
+
+
+megacomplex:
+  kin_mc:
+    k_matrix: [km1]
+
+k_matrix:
+  km1:
+    matrix:
+      (s1, s1): kinetic.k1
+      (s2, s2): kinetic.k2
+
+
+initial_concentration:
+  inputs:
+    compartments: [s1, s2]
+    parameters: [inputs.one, inputs.one]

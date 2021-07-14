@@ -1,0 +1,27 @@
+type: spectral
+dataset:
+  dataset:
+    megacomplex: [spec_mc]
+
+
+megacomplex:
+  spec_mc:
+    shape:
+      s1: sh1
+      s2: sh2
+    energy_spectrum: True  # to allow specification of spectral parameters in cm-1
+    # TODO: only works if axis is in nm (not when already in cm^-1)
+
+shape:
+  sh1:
+    type: skewed-gaussian
+    amplitude: spectral.amp1
+    location: spectral.loc1
+    width: spectral.width1
+    skewness: spectral.skew1
+  sh2:
+    type: skewed-gaussian
+    amplitude: spectral.amp2
+    location: spectral.loc2
+    width: spectral.width2
+    skewness: spectral.skew2
