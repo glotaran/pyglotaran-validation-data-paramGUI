@@ -81,6 +81,7 @@ spectemp_scheme = Scheme(
     spectemp_model,
     spectemp_parameters,
     data={"dataset": dataset},
+    group=False,
 )
 
 spectemp_result = optimize(spectemp_scheme)
