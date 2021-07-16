@@ -1,0 +1,30 @@
+inputs:
+  - ["one", 1, { vary: False }]
+
+kinetic:
+  - ["k1", 0.055]
+  - ["k2", 0.005]
+
+# spectral:
+#   - ["amp1", 1, { vary: False }]
+#   - ["loc1", 22000]
+#   - ["width1", 4000]
+#   - ["skew1", 0.1]
+#   - ["amp2", 1, { vary: False }]
+#   - ["loc2", 20000]
+#   - ["width2", 3500]
+#   - ["skew2", -0.1]
+
+spectral:
+  - ["amp1", 1, { vary: False }]
+  - ["loc1", 450]
+  - ["width1", 70]
+  - ["skew1", 0.1]
+  - ["amp2", 1, { vary: False }]
+  - ["loc2", 500]
+  - ["width2", 70]
+  - ["skew2", -0.1]
+
+irf:
+  - ["center", -0.5]
+  - ["width", 1.5]

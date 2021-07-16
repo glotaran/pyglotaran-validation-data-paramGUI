@@ -13,7 +13,7 @@ megacomplex:
 k_matrix:
   km1:
     matrix:
-      (s1, s1): kinetic.k1
+      (s2, s1): kinetic.k1
       (s2, s2): kinetic.k2
 
 

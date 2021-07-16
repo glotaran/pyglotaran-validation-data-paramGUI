@@ -26,6 +26,7 @@ dataset = load_dataset(script_dir.joinpath("simData01.ascii"))
 # plot_data_overview(dataset)
 
 # %%
+print(f"\n{'#'*10} Kinetic Model {'#'*10}\n")
 kin_model = load_model(script_dir.joinpath("models/kin_model.yml"))
 kin_parameters = load_parameters(script_dir.joinpath("models/kin_params.yml"))
 kin_model.validate(parameters=kin_parameters)
@@ -36,10 +37,16 @@ kin_scheme = Scheme(
     kin_parameters,
     data={"dataset": dataset},
 )
-# kin_result = optimize(kin_scheme)
+kin_result = optimize(kin_scheme)
+
+print(f"\n{'#'*3} Kinetic Model - Optimization Result {'#'*3}\n")
+print(kin_result)
+print(f"\n{'#'*3} Kinetic Model - Optimized Parameters {'#'*3}\n")
+print(kin_result.optimized_parameters)
 # plot_overview(kin_result.data["dataset"], linlog=False);
 
 # %%
+print(f"\n{'#'*10} Spectral Model {'#'*10}\n")
 spectral_model = load_model(script_dir.joinpath("models/spectral_model.yml"))
 spectral_parameters = load_parameters(
     script_dir.joinpath("models/spectral_params.yml")
@@ -54,15 +61,37 @@ spectral_scheme = Scheme(
     data={"dataset": dataset},
 )
 spectral_result = optimize(spectral_scheme)
+print(f"\n{'#'*3} Spectral Model - Optimization Result {'#'*3}\n")
 print(spectral_result)
 
 # %%
-plot_overview(spectral_result.data["dataset"], linlog=False)
+print(f"\n{'#'*3} Spectral Model - Optimized Parameters {'#'*3}\n")
 print(spectral_result.optimized_parameters)
-plt.show(block=True)
+# plot_overview(spectral_result.data["dataset"], linlog=False)
+# plt.show(block=False)
 
 # %% Full Model (a.k.a. spectrotemporal model)
-# TODO: spectrotemporal model pending the full model implementation in pyglotaran
+print(f"\n{'#'*10} Spectrotemporal ('Full') Model {'#'*10}\n")
+spectemp_model = load_model(script_dir.joinpath("models/full_model.yml"))
+spectemp_parameters = load_parameters(script_dir.joinpath("models/full_params.yml"))
+spectemp_model.validate(parameters=spectemp_parameters)
+
+# %%
+spectemp_scheme = Scheme(
+    spectemp_model,
+    spectemp_parameters,
+    data={"dataset": dataset},
+)
+
+spectemp_result = optimize(spectemp_scheme)
+print(spectemp_result)
+print(f"\n{'#'*3} Spectrotemporal Model - Optimization Result {'#'*3}\n")
+
+# %%
+print(f"\n{'#'*3} Spectrotemporal Model - Optimized Parameters {'#'*3}\n")
+print(spectemp_result.optimized_parameters)
+plot_overview(spectemp_result.data["dataset"], linlog=False)
+plt.show(block=True)
 
 
 # %% Validate results by manual inspection
