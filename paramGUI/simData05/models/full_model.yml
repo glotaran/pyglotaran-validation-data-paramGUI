@@ -1,4 +1,4 @@
-type: kinetic-spectrum
+# type: kinetic-spectrum  # is specified per megacomplex
 dataset:
   dataset:
     megacomplex: [kin_mc]
@@ -15,11 +15,12 @@ megacomplex:
         shape:
           s1: sh1
           s2: sh2
+        # energy_spectrum: True
 
 k_matrix:
   km1:
     matrix:
-      (s1, s1): kinetic.k1
+      (s2, s1): kinetic.k1
       (s2, s2): kinetic.k2
 
 shape:
