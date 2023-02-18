@@ -7,13 +7,13 @@ kinetic:
 
 spectral:
   - ["amp1", 1, { vary: False }]
-  - ["loc1", 22000]
-  - ["width1", 4000]
-  - ["skew1", 0.1]
+  - ["loc1", 14000]
+  - ["width1", 800]
+  - ["skew1", 0.4]
   - ["amp2", 1, { vary: False }]
-  - ["loc2", 20000]
-  - ["width2", 3500]
-  - ["skew2", -0.1]
+  - ["loc2", 13700]
+  - ["width2", 655]
+  - ["skew2", -0.3]
 
 # spectral:
 #   - ["amp1", 1, { vary: False }]

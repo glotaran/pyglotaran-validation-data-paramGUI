@@ -1,0 +1,30 @@
+type: kinetic-spectrum
+dataset:
+  dataset:
+    megacomplex: [kin_mc]
+    initial_concentration: inputs
+    irf: irf1
+
+
+megacomplex:
+  kin_mc:
+    k_matrix: [km1]
+
+k_matrix:
+  km1:
+    matrix:
+      (s2, s1): kinetic.k1
+      (s2, s2): kinetic.k2
+
+
+initial_concentration:
+  inputs:
+    compartments: [s1, s2]
+    parameters: [inputs.one, inputs.zero]
+
+
+irf:
+  irf1:
+    type: gaussian
+    center: irf.center
+    width: irf.width

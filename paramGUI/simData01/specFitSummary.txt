@@ -3,27 +3,27 @@ Formula: 0 ~ rescomp(theta = t, d = d, currModel = currModel)
 
 Parameters:
      Estimate Std. Error t value Pr(>|t|)    
-t1  2.200e+04  1.041e+00 21140.3   <2e-16 ***
-t2  4.003e+03  2.118e+00  1889.7   <2e-16 ***
-t3  9.918e-02  6.960e-04   142.5   <2e-16 ***
-t4  2.000e+04  2.237e-01 89394.7   <2e-16 ***
-t5  3.500e+03  4.537e-01  7714.6   <2e-16 ***
-t6 -1.001e-01  1.957e-04  -511.4   <2e-16 ***
+t1  2.200e+04  1.036e+00 21237.0   <2e-16 ***
+t2  3.999e+03  2.116e+00  1890.1   <2e-16 ***
+t3  1.003e-01  7.005e-04   143.1   <2e-16 ***
+t4  2.000e+04  2.261e-01 88444.3   <2e-16 ***
+t5  3.500e+03  4.591e-01  7622.6   <2e-16 ***
+t6 -9.972e-02  1.976e-04  -504.6   <2e-16 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 0.0009984 on 3153 degrees of freedom
+Residual standard error: 0.001009 on 3153 degrees of freedom
 Number of nonlinear parameters: 6 
 Number of conditionally linear parameters: 162 
 
 Correlation of Parameter Estimates:
    t1    t2    t3    t4    t5   
-t2 -0.80                        
-t3  0.46 -0.67                  
+t2 -0.79                        
+t3  0.45 -0.66                  
 t4  0.11  0.35 -0.33            
-t5 -0.33  0.50 -0.02  0.44      
-t6  0.14 -0.16  0.53 -0.12  0.54
+t5 -0.33  0.51 -0.02  0.44      
+t6  0.13 -0.16  0.53 -0.12  0.54
 
 Number of iterations to convergence: 3 
-Achieved convergence tolerance: 9.899e-06 
+Achieved convergence tolerance: 8.747e-06 
 

@@ -4,7 +4,7 @@
 from pathlib import Path
 
 import matplotlib.pyplot as plt
-from pyglotaran_extras.plotting.data import plot_data_overview
+from pyglotaran_extras import plot_data_overview
 from pyglotaran_extras.plotting.plot_overview import plot_overview
 from pyglotaran_extras.plotting.style import PlotStyle
 from glotaran.analysis.optimize import optimize
@@ -46,7 +46,10 @@ def run_kinetic_model(show_plot=False, block_plot=False):
     print(kin_result.optimized_parameters)
     if show_plot:
         plot_overview(kin_result.data["dataset"], linlog=False)
+        plt.get_current_fig_manager().set_window_title("kinetic")
+
         plt.show(block=block_plot)
+
 
 # %%
 def run_spectral_model(show_plot=False, block_plot=False):
@@ -73,6 +76,7 @@ def run_spectral_model(show_plot=False, block_plot=False):
     print(spectral_result.optimized_parameters)
     if show_plot:
         plot_overview(spectral_result.data["dataset"], linlog=False)
+        plt.get_current_fig_manager().set_window_title("spectral")
         plt.show(block=block_plot)
 
 
@@ -99,13 +103,15 @@ def run_spectrotemporal_model(show_plot=False, block_plot=False):
     print(f"\n{'#'*3} Spectrotemporal Model - Optimized Parameters {'#'*3}\n")
     print(spectemp_result.optimized_parameters)
     plot_overview(spectemp_result.data["dataset"], linlog=False)
+    plt.get_current_fig_manager().set_window_title("spectrotemporal")
+
     plt.show(block=block_plot)
 
 
 # %% Validate results by manual inspection
 # TODO: automate this
 
-if __name__=="__main__":
-    run_kinetic_model(show_plot=True, block_plot=True)
-    run_spectral_model(show_plot=True, block_plot=True)
-    run_spectrotemporal_model(show_plot=True, block_plot=True)
+if __name__ == "__main__":
+    run_kinetic_model(show_plot=True, block_plot=False)
+    run_spectral_model(show_plot=False, block_plot=False)
+    run_spectrotemporal_model(show_plot=False, block_plot=True)

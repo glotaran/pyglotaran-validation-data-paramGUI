@@ -1,0 +1,11 @@
+inputs:
+  - ["one", 1, { vary: False }]
+  - ["zero", 0, { vary: False }]
+
+kinetic:
+  - ["k1", 0.025]
+  - ["k2", 0.001]
+
+irf:
+  - ["center", -0.5]
+  - ["width", 1.5]

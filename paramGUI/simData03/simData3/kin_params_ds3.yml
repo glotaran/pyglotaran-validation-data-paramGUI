@@ -1,0 +1,6 @@
+inputs:
+  - ["one", 1, { vary: False }]
+
+kinetic:
+  - ["k1", 0.025]
+  - ["k2", 0.001]

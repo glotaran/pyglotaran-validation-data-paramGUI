@@ -98,7 +98,7 @@ def run_spectrotemporal_model(show_plot=False, block_plot=False):
     # %%
     print(f"\n{'#'*3} Spectrotemporal Model - Optimized Parameters {'#'*3}\n")
     print(spectemp_result.optimized_parameters)
-    plot_overview(spectemp_result.data["dataset"], linlog=False)
+    plot_overview(spectemp_result.data["dataset"], linlog=True, linthresh=80)
     plt.show(block=block_plot)
 
 
