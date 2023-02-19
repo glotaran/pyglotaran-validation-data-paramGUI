@@ -1,5 +1,5 @@
-List of test cases
-==================
+List of examples
+================
 
 Kinetic models
 --------------
