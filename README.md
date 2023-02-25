@@ -1,15 +1,20 @@
-# pyglotaran-validation
-This repository holds scripts for cross-validation of pyglotaran against paramGUI
+# pyglotaran-validation-data repository
+This is a pyglotaran-validation-data repository, which holds data and/or code to generate validation data and the results to check against, for cross-validation with pyglotaran.
 
-## What is paramGUI?
-paramGUI is an R-package for teaching parameter estimation examples inspired by time-resolved spectroscopy. It is based on the Shiny framework and consists of an interactive graphical user interface (GUI) that can be used to explore various parameter estimation examples.
+## repository structure
+A pyglotaran-validation-data repository is structured as follows:
+- [info](info/README.md): contains information about the cross-validation target software (description, screenshots)
+- utility: contains utility code or helper functions to generate data and/or results
+- validation-code: contains code or scripts that can be used for (automated) validation
+- validation-data: contains the generated data to use in cross-validation
+- validation-reference: contains the results to validate against
 
-In the GUI students can simulate data while controlling a limited number of variables (Simulate), model and fit data (Fitting), as well as load and save data (I/O).
+## cross-validation target: paramGUI
 
+### Validation case 01
 
-![paramGUI side menu](screenshots/paramGUI-sc01.png "paramGUI showing the three different states of the side menu")
+### Validation case 02
 
-The main window features 4 primary windows to explore data (Data), visualize the optimization process (Fit progression), visualize the optimization results (Fit results) and explore the statistical significance of the fitted results (Diagnostics).
+### Validation case 03
 
-## Comparison
-The default example which a paramGUI session starts with consists of
+### Result
