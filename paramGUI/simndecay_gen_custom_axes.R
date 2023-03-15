@@ -45,49 +45,52 @@
 #' @export
 #'
 "simndecay_gen_custom_axes" <- function(kinpar, times, spectral, specpar = vector(),
-                                     sigma, irf = FALSE, irfpar = vector(),
-                                     seqmod = FALSE, dispmu = FALSE, nocolsums = FALSE, disptau = FALSE,
-                                     parmu = list(), partau = vector(), lambdac = 0, fullk = FALSE,
-                                     kmat = matrix(), jvec = vector(), specfun = "gaus", nupow = 1,
-                                     irffun = "gaus", kinscal = vector(), lightregimespec = list(),
-                                     specdisp = FALSE, specdisppar = list(), parmufunc = "exp",
-                                     specdispindex = list(), amplitudes = vector(), specref = 0,
-                                     nosiminfo = FALSE) {
-
+                                        sigma, irf = FALSE, irfpar = vector(),
+                                        seqmod = FALSE, dispmu = FALSE, nocolsums = FALSE, disptau = FALSE,
+                                        parmu = list(), partau = vector(), lambdac = 0, fullk = FALSE,
+                                        kmat = matrix(), jvec = vector(), specfun = "gaus", nupow = 1,
+                                        irffun = "gaus", kinscal = vector(), lightregimespec = list(),
+                                        specdisp = FALSE, specdisppar = list(), parmufunc = "exp",
+                                        specdispindex = list(), amplitudes = vector(), specref = 0,
+                                        nosiminfo = FALSE) {
   x <- times
   x2 <- spectral
-  
+
   nt <- length(x)
   nl <- length(x2)
-  
+
   ncomp <- length(kinpar)
-  
+
   if (specdisp) {
     ## store all the spectra; could do it otherwise if mem. is an
     ## issue
     EList <- list()
     for (i in 1:nt) {
-      sp <- specparF(specpar = specpar, xi = x[i], i = i,
-                     specref = specref, specdispindex = specdispindex,
-                     specdisppar = specdisppar, parmufunc = parmufunc)
+      sp <- specparF(
+        specpar = specpar, xi = x[i], i = i,
+        specref = specref, specdispindex = specdispindex,
+        specdisppar = specdisppar, parmufunc = parmufunc
+      )
       EList[[i]] <- calcEhiergaus(sp, x2, nupow)
     }
-  } else if (nl==1) {
+  } else if (nl == 1) {
     E2 <- matrix(1, nrow = 1, ncol = ncomp)
     # TODO: set modType to 0?
   } else {
     E2 <- calcEhiergaus(specpar, x2, nupow)
   }
-  
+
   if (!(dispmu || disptau)) {
     if (nt == 1) {
       C2 <- matrix(amplitudes, nrow = 1, ncol = ncomp)
       # TODO: set modType to 0?
     } else {
-      C2 <- compModel(k = kinpar, x = x, irfpar = irfpar,
-                      irf = irf, seqmod = seqmod, fullk = fullk, kmat = kmat,
-                      jvec = jvec, amplitudes = amplitudes, lightregimespec = lightregimespec,
-                      nocolsums = nocolsums, kinscal = kinscal)
+      C2 <- compModel(
+        k = kinpar, x = x, irfpar = irfpar,
+        irf = irf, seqmod = seqmod, fullk = fullk, kmat = kmat,
+        jvec = jvec, amplitudes = amplitudes, lightregimespec = lightregimespec,
+        nocolsums = nocolsums, kinscal = kinscal
+      )
     }
     if (specdisp) {
       psisim <- matrix(nrow = nt, ncol = nl)
@@ -95,33 +98,43 @@
       for (i in 1:nt) {
         psisim[i, ] <- t(as.matrix(C2[i, ])) %*% t(EList[[i]])
       }
-    } else psisim <- C2 %*% t(E2)
+    } else {
+      psisim <- C2 %*% t(E2)
+    }
   } else {
     psisim <- matrix(nrow = nt, ncol = nl)
     for (i in 1:nl) {
-      irfvec <- irfparF(irfpar, lambdac, x2[i], i, dispmu,
-                        parmu, disptau, partau, "", "", "gaus")
-      
-      C2 <- compModel(k = kinpar, x = x, irfpar = irfpar,
-                      irf = irf, seqmod = seqmod, fullk = fullk, kmat = kmat,
-                      jvec = jvec, amplitudes = amplitudes, lightregimespec = lightregimespec,
-                      nocolsums = nocolsums, kinscal = kinscal)
+      irfvec <- irfparF(
+        irfpar, lambdac, x2[i], i, dispmu,
+        parmu, disptau, partau, "", "", "gaus"
+      )
+
+      C2 <- compModel(
+        k = kinpar, x = x, irfpar = irfpar,
+        irf = irf, seqmod = seqmod, fullk = fullk, kmat = kmat,
+        jvec = jvec, amplitudes = amplitudes, lightregimespec = lightregimespec,
+        nocolsums = nocolsums, kinscal = kinscal
+      )
       psisim[, i] <- C2 %*% cbind(E2[i, ])
     }
   }
   dim(psisim) <- c(nt * nl, 1)
   psi.df <- psisim + sigma * rnorm(nt * nl)
   dim(psi.df) <- c(nt, nl)
-  
+
   if (nosiminfo) {
-    dat(psi.df = psi.df, x = x, nt = nt, x2 = x2, nl = nl,
-        simdata = FALSE)
+    dat(
+      psi.df = psi.df, x = x, nt = nt, x2 = x2, nl = nl,
+      simdata = FALSE
+    )
   } else {
-    kin(psi.df = psi.df, x = x, nt = nt, x2 = x2, nl = nl,
-        C2 = C2, E2 = E2, kinpar = kinpar, specpar = specpar,
-        seqmod = seqmod, irf = irf, irfpar = irfpar, dispmu = dispmu,
-        disptau = disptau, parmu = parmu, partau = partau,
-        lambdac = lambdac, simdata = TRUE, fullk = fullk,
-        kmat = kmat, jvec = jvec, amplitudes = amplitudes)
+    kin(
+      psi.df = psi.df, x = x, nt = nt, x2 = x2, nl = nl,
+      C2 = C2, E2 = E2, kinpar = kinpar, specpar = specpar,
+      seqmod = seqmod, irf = irf, irfpar = irfpar, dispmu = dispmu,
+      disptau = disptau, parmu = parmu, partau = partau,
+      lambdac = lambdac, simdata = TRUE, fullk = fullk,
+      kmat = kmat, jvec = jvec, amplitudes = amplitudes
+    )
   }
 }
