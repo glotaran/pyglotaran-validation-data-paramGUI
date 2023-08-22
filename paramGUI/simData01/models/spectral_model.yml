@@ -1,4 +1,4 @@
-type: spectral
+default_megacomplex: spectral
 dataset:
   dataset:
     megacomplex: [spec_mc]
