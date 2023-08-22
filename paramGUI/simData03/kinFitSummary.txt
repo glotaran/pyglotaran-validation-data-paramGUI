@@ -6,7 +6,7 @@ Parameters:
 t1 2.499e-02  6.978e-06    3581   <2e-16 ***
 t2 9.998e-04  2.540e-07    3936   <2e-16 ***
 ---
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Signif. codes:  0 â€˜***â€™ 0.001 â€˜**â€™ 0.01 â€˜*â€™ 0.05 â€˜.â€™ 0.1 â€˜ â€™ 1
 
 Residual standard error: 0.001005 on 7774 degrees of freedom
 Number of nonlinear parameters: 2 
@@ -17,5 +17,5 @@ Correlation of Parameter Estimates:
 t2 0.10
 
 Number of iterations to convergence: 4 
-Achieved convergence tolerance: 1.219e-06 
+Achieved convergence tolerance: 1.21e-06 
 

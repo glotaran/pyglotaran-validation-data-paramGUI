@@ -20,14 +20,14 @@ irfpar_guess <- c( -0.45 , 1.6 )
 
 # Simulate some data!
 simulateAndExportDatasetCustomAxes(simFilename,
-                                   kinpar = kinpar_sim , 
-                                   amplitudes =  c(1, 1) , 
+                                   kinpar = kinpar_sim ,
+                                   amplitudes =  c(1, 1) ,
                                    times = times_no_IRF,
-                                   specpar=  specpar_sim , 
-                                   spectral = spectral, 
-                                   sigma=  global_sigma , 
-                                   irf =  irf_sim , 
-                                   irfpar = irfpar_sim , 
+                                   specpar=  specpar_sim ,
+                                   spectral = spectral,
+                                   sigma=  global_sigma ,
+                                   irf =  irf_sim ,
+                                   irfpar = irfpar_sim ,
                                    seqmod = seqmod_sim )
 
 

@@ -6,8 +6,8 @@ rm(list = ls())
 initial_wd <- getwd()
 print(paste('initial workdir (initial_wd): ', initial_wd))
 
-detach("package:paramGUI", unload = TRUE)
-detach("package:TIMP", unload = TRUE)
+# detach("package:paramGUI", unload = TRUE)
+# detach("package:TIMP", unload = TRUE)
 # load packages
 require(TIMP)
 require(paramGUI)

@@ -1,9 +1,8 @@
-type: kinetic-spectrum
+default_megacomplex: decay
 dataset:
   dataset:
     megacomplex: [kin_mc]
     initial_concentration: inputs
-
 
 megacomplex:
   kin_mc:
@@ -14,7 +13,6 @@ k_matrix:
     matrix:
       (s1, s1): kinetic.k1
       (s2, s2): kinetic.k2
-
 
 initial_concentration:
   inputs:

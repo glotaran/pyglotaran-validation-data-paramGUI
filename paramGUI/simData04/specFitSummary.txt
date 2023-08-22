@@ -10,7 +10,7 @@ t4  1.370e+04  4.816e-02  284473   <2e-16 ***
 t5  6.500e+02  8.088e-02    8036   <2e-16 ***
 t6 -2.998e-01  2.339e-04   -1282   <2e-16 ***
 ---
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Signif. codes:  0 â€˜***â€™ 0.001 â€˜**â€™ 0.01 â€˜*â€™ 0.05 â€˜.â€™ 0.1 â€˜ â€™ 1
 
 Residual standard error: 0.001001 on 7166 degrees of freedom
 Number of nonlinear parameters: 6 
@@ -25,5 +25,5 @@ t5  0.17  0.10 -0.13 -0.28
 t6  0.11  0.11 -0.11 -0.75  0.36
 
 Number of iterations to convergence: 6 
-Achieved convergence tolerance: 4.93e-08 
+Achieved convergence tolerance: 4.75e-08 
 

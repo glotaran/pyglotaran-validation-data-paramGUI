@@ -1,4 +1,4 @@
-# type: kinetic-spectrum  # is specified per megacomplex
+# default_megacomplex: decay  # is specified per megacomplex
 dataset:
   dataset:
     megacomplex: [kin_mc]
@@ -7,15 +7,15 @@ dataset:
     irf: irf1
 
 megacomplex:
-    kin_mc:
-        type: decay
-        k_matrix: [km1]
-    spec_mc:
-        type: spectral
-        shape:
-          s1: sh1
-          s2: sh2
-        # energy_spectrum: True
+  kin_mc:
+    type: decay
+    k_matrix: [km1]
+  spec_mc:
+    type: spectral
+    shape:
+      s1: sh1
+      s2: sh2
+    # energy_spectrum: True
 
 k_matrix:
   km1:
