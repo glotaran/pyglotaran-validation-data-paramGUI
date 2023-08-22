@@ -1,4 +1,4 @@
-# 
+#
 initial_wd <- getwd()
 print(paste('initial workdir (initial_wd): ', initial_wd))
 
@@ -40,14 +40,14 @@ simulateAndExportDatasetParamGUI <- function(filename, ...) {
 
 simulateAndExportDatasetParamGUI(
   filename = 'tst2023.ascii',
-  kinpar = c(0.02, 0.2, 0.05, 0.016, 0.004) , 
-  amplitudes =  c(0, 2, 1, 0.8, 0.2) , 
-  tmax =  90 , 
-  deltat=  0.5 , 
-  specpar=  list(c(18000, 2000, 0.01), 
-                 c(18000, 2500, 0.01), 
-                 c(18000, 2500,  0.01), 
-                 c(16000, 2000, -0.01), 
-                 c(16000, 2000, -0.01)) , 
-                 lmin=  500 , lmax=  700 , deltal=  4 , sigma=  2e-05 , 
+  kinpar = c(0.02, 0.2, 0.05, 0.016, 0.004) ,
+  amplitudes =  c(0, 2, 1, 0.8, 0.2) ,
+  tmax =  90 ,
+  deltat=  0.5 ,
+  specpar=  list(c(18000, 2000, 0.01),
+                 c(18000, 2500, 0.01),
+                 c(18000, 2500,  0.01),
+                 c(16000, 2000, -0.01),
+                 c(16000, 2000, -0.01)) ,
+                 lmin=  500 , lmax=  700 , deltal=  4 , sigma=  2e-05 ,
                  irf =  FALSE , irfpar = c( 2 , 1 ) , seqmod = TRUE )

@@ -7,7 +7,6 @@ import matplotlib.pyplot as plt
 from glotaran.io import load_dataset, load_model, load_parameters
 from glotaran.optimization.optimize import optimize
 from glotaran.project.scheme import Scheme
-from pyglotaran_extras.plotting.data import plot_data_overview
 from pyglotaran_extras.plotting.plot_overview import plot_overview
 from pyglotaran_extras.plotting.style import PlotStyle
 

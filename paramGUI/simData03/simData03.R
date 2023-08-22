@@ -19,14 +19,14 @@ specpar_guess <- list(c(14285-50, 800+50, 0.4-0.1), c(13700+200, 650-50, -0.3+0.
 
 # Simulate some data!
 simulateAndExportDatasetCustomAxes(simFilename,
-                                   kinpar = kinpar_sim , 
-                                   amplitudes =  c(1, 1) , 
+                                   kinpar = kinpar_sim ,
+                                   amplitudes =  c(1, 1) ,
                                    times = times_no_IRF,
-                                   specpar=  specpar_sim , 
-                                   spectral = spectral, 
-                                   sigma=  global_sigma , 
-                                   irf =  irf_sim , 
-                                   irfpar = irfpar_sim , 
+                                   specpar=  specpar_sim ,
+                                   spectral = spectral,
+                                   sigma=  global_sigma ,
+                                   irf =  irf_sim ,
+                                   irfpar = irfpar_sim ,
                                    seqmod = seqmod_sim )
 
 
