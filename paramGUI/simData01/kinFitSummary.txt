@@ -17,5 +17,5 @@ Correlation of Parameter Estimates:
 t2 0.58
 
 Number of iterations to convergence: 3 
-Achieved convergence tolerance: 3.595e-07 
+Achieved convergence tolerance: 3.441e-07 
 
