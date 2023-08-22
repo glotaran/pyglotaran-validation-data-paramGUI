@@ -65,13 +65,6 @@ sink("kinFitSummary.txt")
 print(kinFitSummary)
 sink()
 
-# Loops over parameters
-currTheta <- kinFit$currTheta[[1]]
-slot_names = slotNames(currTheta)
-for (sn in slot_names) {
-  print(currTheta@sn)
-}
-
 if (!show_plot)
   png('kinFit.png', width = 1024, height = 768, res=100)
 plotterforGUI(
