@@ -1,0 +1,22 @@
+[project]
+name = "paramgui-validation"
+version = "0.1.0"
+description = "Notebook-based pyglotaran validation workflows for paramGUI datasets."
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+classifiers = [
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+  "ipykernel>=6.29",
+  "matplotlib>=3.9",
+  "papermill>=2.6",
+  "pyglotaran>=0.7.4",
+  "pyglotaran-extras>=0.7.4",
+]
+
+[tool.uv]
+package = false

@@ -1,0 +1,16 @@
+inputs:
+  - ["one", 1, { vary: False }]
+
+kinetic:
+  - ["k1", 0.025]
+  - ["k2", 0.001]
+
+spectral:
+  - ["amp1", 1, { vary: False }]
+  - ["loc1", 14285]
+  - ["width1", 800]
+  - ["skew1", 0.4]
+  - ["amp2", 1, { vary: False }]
+  - ["loc2", 13700]
+  - ["width2", 650]
+  - ["skew2", -0.3]

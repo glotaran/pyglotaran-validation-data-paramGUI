@@ -1,23 +1,38 @@
-# pyglotaran-validation-data repository
+# pyglotaran validation data for paramGUI
 
 This is a pyglotaran-validation-data repository, which holds data and/or code to generate validation data and the results to check against, for cross-validation with pyglotaran.
 
-## repository structure
+## Current scope
 
-A pyglotaran-validation-data repository is structured as follows:
+- `simData01`: notebook analysis for kinetic, spectral, and spectrotemporal models
+- `simData02`: notebook analysis for kinetic, spectral, and spectrotemporal models
+- `simData03`: notebook analysis for kinetic, spectral, and spectrotemporal models
+- `simData04`: notebook analysis for kinetic, spectral, and spectrotemporal models
+- `simData05`: notebook analysis for kinetic, spectral, and spectrotemporal models
+- R scripts under `paramGUI/` are archival inputs only and are not executed by the Python workflow
 
-- [info](info/README.md): contains information about the cross-validation target software (description, screenshots)
-- utility: contains utility code or helper functions to generate data and/or results
-- validation-code: contains code or scripts that can be used for (automated) validation
-- validation-data: contains the generated data to use in cross-validation
-- validation-reference: contains the results to validate against
+## Python workflow
 
-## cross-validation target: paramGUI
+The Python workflow is managed with `uv`.
 
-### Validation case 01
+### Bootstrap
 
-### Validation case 02
+```bash
+uv sync
+```
 
-### Validation case 03
+### Run a single notebook from the CLI
 
-### Result
+```bash
+uv run scripts/run_notebooks.py simdata01
+uv run scripts/run_notebooks.py simdata02
+uv run scripts/run_notebooks.py simdata03
+uv run scripts/run_notebooks.py simdata04
+uv run scripts/run_notebooks.py simdata05
+```
+
+### Run all notebooks
+
+```bash
+uv run scripts/run_notebooks.py run-all
+```

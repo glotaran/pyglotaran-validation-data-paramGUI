@@ -1,7 +1,9 @@
-type: spectral-model
+default_megacomplex: spectral
 dataset:
   dataset:
     megacomplex: [spec_mc]
+    spectral_axis_inverted: True # to allow specification of spectral parameters in cm-1
+    spectral_axis_scale: 1E7 # 10000000 # 1E7
 
 megacomplex:
   spec_mc:
